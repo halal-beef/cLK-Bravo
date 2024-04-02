@@ -60,7 +60,7 @@ htcleo_boot_s:
 .global pc_reset_vector
 .global pc_reset_vector_end
 pc_reset_vector:
-		mov r0, #0x11800000
+		mov r0, #0x20000000
 		ldr pc, [r0, #4]
 		//mov pc, #MEMBASE
 		#ldr pc, #MEMBASE

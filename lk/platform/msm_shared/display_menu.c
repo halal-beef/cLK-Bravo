@@ -262,7 +262,7 @@ char device_cid[24];
 char update_device_cid(void)
 {
 	char cidBuffer[24];
-	dump_mem_to_buf((char*)str2u("0x1EF270"), str2u("0x8"), cidBuffer);
+	dump_mem_to_buf((char*)str2u("0x1FC070"), str2u("0x8"), cidBuffer);
 
 	hex2ascii(cidBuffer, device_cid);
 
@@ -277,7 +277,7 @@ char radBuffer[25];
 void update_radio_ver(void)
 {
 	while(radBuffer[0] != '3')
-		dump_mem_to_buf((char*)str2u("0x1EF220"), str2u("0xA"), radBuffer);
+		dump_mem_to_buf((char*)str2u("0x1FC020"), str2u("0xA"), radBuffer);
 
 	hex2ascii(radBuffer, radio_version);
 
@@ -291,7 +291,7 @@ char spl_version[24];
 void update_spl_ver(void)
 {
 	char splBuffer[24];
-	dump_mem_to_buf((char*)str2u("0x1004"), str2u("0x9"), splBuffer);
+	dump_mem_to_buf((char*)str2u("0x40"), str2u("0xE"), splBuffer);
 
 	hex2ascii(splBuffer, spl_version);
 
@@ -593,7 +593,7 @@ void display_fastboot_menu_renew(struct select_msg_info *fastboot_msg_info)
 
 	display_fbcon_menu_message("FASTBOOT MODE\n", FBCON_RED_MSG, common_factor, 0);
 
-	snprintf(msg, sizeof(msg), "PRODUCT_NAME - %s\n", "Htc Leo");
+	snprintf(msg, sizeof(msg), "PRODUCT_NAME - %s\n", "Htc Bravo");
 	display_fbcon_menu_message(msg, FBCON_COMMON_MSG, common_factor, 0);
 
 	// memset(msg_buf, 0, sizeof(msg_buf));
@@ -613,7 +613,7 @@ void display_fastboot_menu_renew(struct select_msg_info *fastboot_msg_info)
 
 	memset(msg_buf, 0, sizeof(msg_buf));
 	//get_bootloader_version((unsigned char *) msg_buf);
-	snprintf(msg, sizeof(msg), "SPL VERSION - %s\n",
+	snprintf(msg, sizeof(msg), "HBOOT BUILD COMMIT - %s\n",
 		spl_version);
 	display_fbcon_menu_message(msg, FBCON_COMMON_MSG, common_factor, 0);
 	

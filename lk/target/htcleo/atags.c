@@ -8,7 +8,7 @@ unsigned* target_atag_mem(unsigned* ptr)
 	//*ptr++ = 0x1e400000; //mem size from haret
 	//*ptr++ = 0x1E7C0000; //mem size from kernel config
 	*ptr++ = 0x1CFC0000; //mem size from kernel config with bravo dsp
-	*ptr++ = 0x11800000; //mem base
+	*ptr++ = 0x20000000; //mem base
 #endif
 
 	//add atag to notify nand boot

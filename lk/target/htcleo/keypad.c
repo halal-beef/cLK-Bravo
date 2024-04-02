@@ -14,8 +14,8 @@ static const unsigned short htcleo_keymap[ARRAY_SIZE(htcleo_col_gpios) * ARRAY_S
 	[KEYMAP_INDEX(1, 0)] = KEY_SOFT1,		// Windows Button
 	[KEYMAP_INDEX(1, 1)] = KEY_SEND,		// Dial Button
 	[KEYMAP_INDEX(1, 2)] = KEY_CLEAR,		// Hangup Button
-	[KEYMAP_INDEX(2, 0)] = KEY_BACK,		// Back Button
-	[KEYMAP_INDEX(2, 1)] = KEY_HOME,		// Home Button
+	[KEYMAP_INDEX(2, 2)] = KEY_BACK,		// Back Button
+	[KEYMAP_INDEX(2, 0)] = KEY_HOME,		// Home Button
 };
 
 static struct gpio_keypad_info htcleo_keypad_info = {

@@ -25,7 +25,7 @@
 #include "version.h"
 #include <pcg_basic.h>
 
-#define LINUX_MACHTYPE  2524
+#define LINUX_MACHTYPE  2547
 #define HTCLEO_FLASH_OFFSET	0x219
 #define OUTPUT_LEN = 10;
 
@@ -285,7 +285,7 @@ void htcleo_fastboot_init()
 void target_early_init(void)
 {
 	//cedesmith: write reset vector while we can as MPU kicks in after flash_init();
-	writel(0xe3a00546, 0); //mov r0, #0x11800000
+	writel(0xe3a00202, 0); //mov r0, #0x20000000
 	writel(0xe590f004, 4); //ldr	r15, [r0, #4]
 }
 unsigned board_machtype(void)
